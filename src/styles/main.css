@@ -42,7 +42,6 @@ body {
 .movie-image {
     height: 300px;
     width: 220px;
-    background-image: url('../assets/1.jpg');
     background-size: cover;
 }
 .movie-title, .movie-year {

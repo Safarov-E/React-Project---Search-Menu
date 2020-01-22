@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
+import Movie from './components/movie';
+import data from './components/data';
 import './styles/main.css'
 
 class App extends Component {
   render() {
+    let name = [];
+    let year = [];
+    Object.keys(data).forEach(key => {
+      name.push(data[key].title);
+      year.push(data[key].year);
+    })
     return (
       <div className="container">
         <div className="input-container">
@@ -11,53 +19,11 @@ class App extends Component {
         </div>
 
         <div className="movies-container">
-          <div className="movie-container">
-            <div className="movie-image"></div>
-            <p className="movie-title">Dark Knight</p>
-            <p className="movie-year">2005</p>
-          </div>
-
-          <div className="movie-container">
-            <div className="movie-image"></div>
-            <p className="movie-title">Dark Knight</p>
-            <p className="movie-year">2005</p>
-          </div>
-
-          <div className="movie-container">
-            <div className="movie-image"></div>
-            <p className="movie-title">Dark Knight</p>
-            <p className="movie-year">2005</p>
-          </div>
-
-          <div className="movie-container">
-            <div className="movie-image"></div>
-            <p className="movie-title">Dark Knight</p>
-            <p className="movie-year">2005</p>
-          </div>
-
-          <div className="movie-container">
-            <div className="movie-image"></div>
-            <p className="movie-title">Dark Knight</p>
-            <p className="movie-year">2005</p>
-          </div>
-
-          <div className="movie-container">
-            <div className="movie-image"></div>
-            <p className="movie-title">Dark Knight</p>
-            <p className="movie-year">2005</p>
-          </div>
-
-          <div className="movie-container">
-            <div className="movie-image"></div>
-            <p className="movie-title">Dark Knight</p>
-            <p className="movie-year">2005</p>
-          </div>
-
-          <div className="movie-container">
-            <div className="movie-image"></div>
-            <p className="movie-title">Dark Knight</p>
-            <p className="movie-year">2005</p>
-          </div>
+          {  
+            name.map( (movie,i) => {
+              return <Movie name={name[i]} title={name[i]} year={year[i]} key={i}/>
+            })
+          }
         </div>
       </div>
     );
