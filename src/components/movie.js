@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import q1 from '../assets/q1.jpg'; 
 import q2 from '../assets/q2.jpg'; 
 import q3 from '../assets/q3.jpg'; 
@@ -60,7 +60,7 @@ const Movie = (props) => {
     return (
         <div className="movie-container">
             <div className="movie-image" style={cover}></div>
-            <p className="movie-title">{props.title}</p>
+            <p className="movie-title">{props.name}</p>
             <p className="movie-year">{props.year}</p>
         </div>
     );
